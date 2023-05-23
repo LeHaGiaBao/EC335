@@ -1,4 +1,4 @@
-# Authentication and Authorization
+# Authentication and Authorization Backend project
 
 ## Technology
 
