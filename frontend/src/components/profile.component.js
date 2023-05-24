@@ -11,33 +11,44 @@ class Profile extends Component {
 		}
 
 		return (
-			<div className='container'>
-				<header className='jumbotron'>
-					<h3>
-						<strong>{currentUser.username}</strong> Profile
-					</h3>
-				</header>
-				<p>
-					<strong>Token:</strong>{' '}
-					{currentUser.accessToken.substring(0, 20)} ...{' '}
-					{currentUser.accessToken.substr(
-						currentUser.accessToken.length - 20
-					)}
-				</p>
-				<p>
-					<strong>Id:</strong> {currentUser.id}
-				</p>
-				<p>
-					<strong>Email:</strong> {currentUser.email}
-				</p>
-				<strong>Authorities:</strong>
-				<ul>
-					{currentUser.roles &&
-						currentUser.roles.map((role, index) => (
-							<li key={index}>{role}</li>
-						))}
-				</ul>
-			</div>
+			<>
+				<div className='container'>
+					<section className='py-10 bg-gray-100 sm:py-16 lg:py-24'>
+						<div className='max-w-5xl px-4 mx-auto sm:px-6 lg:px-8'>
+							<div className='max-w-2xl mx-auto text-center'>
+								<h1 className='text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-6xl'>
+									<p>{currentUser.username} profile</p>
+								</h1>
+							</div>
+						</div>
+					</section>
+					<br />
+					<br />
+					<p>
+						<strong className='text-2xl'>Token:</strong>{' '}
+						{currentUser.accessToken.substring(0, 20)} ...{' '}
+						{currentUser.accessToken.substr(
+							currentUser.accessToken.length - 20
+						)}
+					</p>
+					<p>
+						<strong className='text-2xl'>Id:</strong> {currentUser.id}
+					</p>
+					<p>
+						<strong className='text-2xl'>Email:</strong>{' '}
+						{currentUser.email}
+					</p>
+					<strong className='text-2xl'>Authorities:</strong>
+					<br />
+					<br />
+					<ul>
+						{currentUser.roles &&
+							currentUser.roles.map((role, index) => (
+								<li key={index}>{role}</li>
+							))}
+					</ul>
+				</div>
+			</>
 		)
 	}
 }

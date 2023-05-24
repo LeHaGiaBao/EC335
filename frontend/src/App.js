@@ -72,20 +72,24 @@ class App extends Component {
 		return (
 			<Router history={history}>
 				<div>
-					<nav className='navbar navbar-expand navbar-dark bg-dark'>
-						<Link to={'/'} className='navbar-brand'>
-							Authentication and Authorization
+					<nav className='navbar navbar-expand navbar-dark bg-gray-800'>
+						<Link to={'/'} className='navbar-brand text-5xl'>
+							EC335
 						</Link>
 						<div className='navbar-nav mr-auto'>
 							<li className='nav-item'>
-								<Link to={'/home'} className='nav-link'>
+								<Link
+									to={'/home'}
+									className='nav-link text-lg text-white'>
 									Home
 								</Link>
 							</li>
 
 							{showModeratorBoard && (
 								<li className='nav-item'>
-									<Link to={'/mod'} className='nav-link'>
+									<Link
+										to={'/mod'}
+										className='nav-link text-lg text-white'>
 										Moderator Board
 									</Link>
 								</li>
@@ -93,7 +97,9 @@ class App extends Component {
 
 							{showAdminBoard && (
 								<li className='nav-item'>
-									<Link to={'/admin'} className='nav-link'>
+									<Link
+										to={'/admin'}
+										className='nav-link text-lg text-white'>
 										Admin Board
 									</Link>
 								</li>
@@ -101,7 +107,9 @@ class App extends Component {
 
 							{currentUser && (
 								<li className='nav-item'>
-									<Link to={'/user'} className='nav-link'>
+									<Link
+										to={'/user'}
+										className='nav-link text-lg text-white'>
 										User
 									</Link>
 								</li>
@@ -111,14 +119,16 @@ class App extends Component {
 						{currentUser ? (
 							<div className='navbar-nav ml-auto'>
 								<li className='nav-item'>
-									<Link to={'/profile'} className='nav-link'>
+									<Link
+										to={'/profile'}
+										className='nav-link text-lg text-white'>
 										{currentUser.username}
 									</Link>
 								</li>
 								<li className='nav-item'>
 									<a
 										href='/login'
-										className='nav-link'
+										className='nav-link text-lg text-white'
 										onClick={this.logOut}>
 										LogOut
 									</a>
@@ -127,13 +137,17 @@ class App extends Component {
 						) : (
 							<div className='navbar-nav ml-auto'>
 								<li className='nav-item'>
-									<Link to={'/login'} className='nav-link'>
+									<Link
+										to={'/login'}
+										className='nav-link text-lg text-white'>
 										Login
 									</Link>
 								</li>
 
 								<li className='nav-item'>
-									<Link to={'/register'} className='nav-link'>
+									<Link
+										to={'/register'}
+										className='nav-link text-lg text-white'>
 										Sign Up
 									</Link>
 								</li>
